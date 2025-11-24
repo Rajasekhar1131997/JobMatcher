@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobMatcher | Feed</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <h1>JobMatcher</h1>
+      <p>Fresh part-time shifts from local businesses. Apply instantly.</p>
+      <div class="filters">
+        <input id="searchInput" type="text" placeholder="Search by title, company, or city">
+        <select id="payFilter">
+          <option value="">Pay (any)</option>
+          <option value="15">15+/hr</option>
+          <option value="20">20+/hr</option>
+          <option value="25">25+/hr</option>
+        </select>
+        <select id="distanceFilter">
+          <option value="">Distance (any)</option>
+          <option value="5">Within 5 mi</option>
+          <option value="10">Within 10 mi</option>
+          <option value="20">Within 20 mi</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section>
+      <div id="jobsGrid" class="grid"></div>
+      <div id="emptyState" class="empty hidden">No jobs match your filters.</div>
+    </section>
+  </main>
+
+  <div id="jobModal" class="modal hidden">
+    <div id="modalOverlay" class="modal__overlay"></div>
+    <div class="modal__content">
+      <button id="modalClose" class="modal__close" aria-label="Close">×</button>
+      <div class="modal__header">
+        <div>
+          <div id="modalSource" class="pill pill--source"></div>
+          <h2 id="modalTitle"></h2>
+          <p id="modalCompany"></p>
+        </div>
+        <div id="modalPay" class="modal__pay"></div>
+      </div>
+      <div id="modalDetails" class="modal__details"></div>
+      <p id="modalDesc" class="modal__desc"></p>
+      <div id="modalImages" class="modal__images"></div>
+      <div class="modal__footer">
+        <button id="modalApply" class="cta">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="jobCardTemplate">
+    <article class="card">
+      <div class="card__header">
+        <div>
+          <div class="pill pill--source"></div>
+          <h3 class="card__title"></h3>
+          <p class="card__company"></p>
+        </div>
+        <div class="card__pay"></div>
+      </div>
+      <p class="card__meta"></p>
+      <p class="card__desc"></p>
+      <div class="card__footer">
+        <span class="pill pill--shift"></span>
+        <span class="pill pill--distance"></span>
+        <button class="cta">Apply</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
