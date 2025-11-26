@@ -51,3 +51,4 @@ Free-text Parsing (LLM Fallback: OpenAI)
 - If required fields are missing from the incoming free-text message, the service attempts to extract them via OpenAI Chat Completions.
 - Set `OPENAI_API_KEY` to enable. Optional: `OPENAI_MODEL` (default `gpt-4o-mini`), `OPENAI_BASE_URL` to override the endpoint.
 - If the LLM is disabled or extraction fails, the user is prompted to resend using the template.
+--
